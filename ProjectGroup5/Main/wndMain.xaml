@@ -6,7 +6,162 @@
         xmlns:local="clr-namespace:ProjectGroup5.Main"
         mc:Ignorable="d"
         Title="wndMain" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#FFE5E5E5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="BtnSearch" Content="Search" Padding="10,2,10,3" BorderThickness="0,0,1,1" Background="#FFFEF2E0"/>
+            <Button x:Name="BtnEditItems" Content="Edit Items" Padding="10,2,10,2" BorderThickness="0,0,1,1" Background="#FFEDF9FF"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Border BorderBrush="Black" BorderThickness="2,2,1,1" Margin="20,20,20,20">
+                <StackPanel Margin="25,5,25,5">
+                    <Label x:Name="LblInvoice" Content="Invoice ####" HorizontalAlignment="Center" FontSize="22" Margin="0,0,0,20"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="LblInvoiceDate" Content="Invoice Date:" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                        <Label Grid.Row="1" Grid.Column="0" x:Name="LblInvoiceTotal" Content="Total Cost:" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                        <Label Grid.Row="0" Grid.Column="1" x:Name="LblDate" Content="N/A" HorizontalAlignment="Right" HorizontalContentAlignment="Left"/>
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="LblTotalAmount" Content="N/A" HorizontalAlignment="Right" HorizontalContentAlignment="Left"/>
+                    </Grid>
+                    <Button x:Name="BtnEditInvoice" Content="Edit Invoice" Padding="1,3,1,3" Margin="0,30,0,0" BorderThickness="1,1,2,2" BorderBrush="Black"/>
+                    <Button x:Name="BtnSaveInvoice" Content="Save Invoice" Padding="1,3,1,3" Margin="0,30,0,0" BorderThickness="1,1,2,2" BorderBrush="Black" Background="#FFC5F5C6"/>
+                    <Button x:Name="BtnDeleteInvoice" Content="Delete Invoice" Padding="1,3,1,3" Margin="0,30,0,0" Background="#FFDE7474" BorderThickness="1,1,2,2" BorderBrush="Black"/>
+                </StackPanel>
+            </Border>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border BorderBrush="Black" BorderThickness="2,2,1,1" Margin="20,20,20,20">
+                        <StackPanel Margin="10,10,10,10">
+                            <Label x:Name="LblAddItem" Content="Add Item" HorizontalAlignment="Center" FontSize="22" Margin="0,0,0,5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label x:Name="LblItem1" Content="Item:" FontSize="16" Margin="0,0,10,0" HorizontalContentAlignment="Left" HorizontalAlignment="Left" IsTabStop="True" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                <ComboBox x:Name="CbAddItems" FontSize="16" Width="122" Height="23"/>
+                            </StackPanel>
+                            <Button x:Name="BtnAdd" Content="Add" Padding="1,3,1,3" Margin="0,15,0,5" Background="#FFC5F5C6" BorderThickness="1,1,2,2" BorderBrush="Black" Width="93"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="2,2,1,1" Margin="20,20,20,20">
+                        <StackPanel Margin="10,10,10,10">
+                            <Label x:Name="LblRemoveItem" Content="Remove Item" HorizontalAlignment="Center" FontSize="22" Margin="0,0,0,5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label x:Name="LblItem2" Content="Item:" FontSize="16" Margin="0,0,10,0" HorizontalContentAlignment="Left" HorizontalAlignment="Left" IsTabStop="True" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                <ComboBox x:Name="CbRemoveItems" FontSize="16" Width="122" Height="23"/>
+                            </StackPanel>
+                            <Button x:Name="BtnRemove" Content="Remove" Padding="1,3,1,3" Margin="0,15,0,5" Background="#FFDE7474" BorderThickness="1,1,2,2" BorderBrush="Black" Width="85"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
+                    <Button x:Name="BtnDown" Content="Down" Padding="1,3,1,3" Margin="0,15,0,0" BorderThickness="1,1,1,0" BorderBrush="Black" Width="51"/>
+                    <Button x:Name="BtnUP" Content="Up" Padding="1,3,1,3" Margin="0,15,0,0" BorderThickness="1,1,2,0" BorderBrush="Black" Width="51"/>
+                </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="2,2,1,1" Margin="20,0,20,20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Row 1 - Column Headers -->
+                        <Border BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label Grid.Row="0" Grid.Column="0" Content="#" HorizontalAlignment="Center" BorderBrush="Black"/>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label Content="Item Code" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label Content="Item Description" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label Content="Item Cost" HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- Row 2 -->
+                        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow2Num" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow2Code" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow2Desc" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow2Cost" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- Row 3 -->
+                        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow3Num" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow3Code" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow3Desc" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow3Cost" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- Row 4 -->
+                        <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow4Num" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow4Code" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow4Desc" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow4Cost" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- Row 5 -->
+                        <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow5Num" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow5Code" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow5Desc" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow5Cost" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- Row 6 -->
+                        <Border Grid.Row="5" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow6Num" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="5" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow6Code" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="5" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow6Desc" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="5" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <Label x:Name="LblRow6Cost" Content="" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
