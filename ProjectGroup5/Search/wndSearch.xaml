@@ -1,0 +1,22 @@
+﻿<Window x:Class="ProjectGroup5.Search.wndSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectGroup5.Search"
+        mc:Ignorable="d"
+        Title="wndSearch" Height="450" Width="800">
+    <Grid>
+        <DataGrid HorizontalAlignment="Center" Height="184" Margin="0,19,0,0" VerticalAlignment="Top" Width="664" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label x:Name="invoiceNumSearchLabel" Content="Invoice Number: " HorizontalAlignment="Left" Height="29" Margin="58,260,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.21,0.6"/>
+        <Label x:Name="invoiceDateSearchLabel" Content="Invoice Date: " HorizontalAlignment="Left" Height="29" Margin="231,260,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Height="43" Margin="570,246,0,0" VerticalAlignment="Top" Width="163" Background="#FFFEF2E0"/>
+        <Button x:Name="clearFiltersButton" Content="Clear Filters" HorizontalAlignment="Left" Height="43" Margin="570,312,0,0" VerticalAlignment="Top" Width="163" Background="#FFDE7474"/>
+        <ComboBox x:Name="invoiceNumberComboBox" HorizontalAlignment="Left" Height="29" Margin="58,312,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="invoiceDateComboBox" HorizontalAlignment="Left" Height="29" Margin="228,311,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="invoiceDateSearchLabel1" Content="Invoice Date: " HorizontalAlignment="Left" Height="29" Margin="390,260,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="inoiceDateComboBox" HorizontalAlignment="Left" Height="30" Margin="390,311,0,0" VerticalAlignment="Top" Width="150"/>
+        <GroupBox x:Name="searchGroupbox" HorizontalAlignment="Left" Height="187" Header="Search Filters" Margin="29,223,0,0" VerticalAlignment="Top" Width="737"/>
+
+    </Grid>
+</Window>
