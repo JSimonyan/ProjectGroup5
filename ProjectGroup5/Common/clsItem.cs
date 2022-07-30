@@ -10,27 +10,57 @@ namespace ProjectGroup5.Common
     class clsItem
     {
         /// <summary>
-        /// Single letter code for an item. Always a capital letter
+        /// Char for the code
         /// </summary>
-        public char itemCode;
+        private string code;
 
         /// <summary>
-        /// 1-4 word description of the item
+        /// Description string
         /// </summary>
-        public string itemDesc;
+        private string description;
 
         /// <summary>
-        /// Cost of the item. All initial items have an even .00 cost
+        /// Item cost
         /// </summary>
-        public decimal itemCost;
+        private double cost;
 
         /// <summary>
-        /// Overridden to return the description
+        /// Item constructor for the code, description and cost.
         /// </summary>
-        /// <returns></returns>
-        public override string ToString()
+        /// <param name="ItemCode"></param>
+        /// <param name="ItemDescription"></param>
+        /// <param name="ItemCost"></param>
+        public clsItem(string ItemCode, string ItemDescription, double ItemCost)
         {
-            return itemDesc;
+            code = ItemCode;
+            description = ItemDescription;
+            cost = ItemCost;
+        }
+
+        /// <summary>
+        /// Cost property
+        /// </summary>
+        public double Cost
+        {
+            get { return cost; }
+            set { cost = value; }
+        }
+
+        /// <summary>
+        /// Description property
+        /// </summary>
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+        /// <summary>
+        /// Code property
+        /// </summary>
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
         }
     }
 

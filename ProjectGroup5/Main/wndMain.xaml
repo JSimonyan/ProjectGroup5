@@ -12,8 +12,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="BtnSearch" Content="Search" Padding="10,2,10,3" BorderThickness="0,0,1,1" Background="#FFFEF2E0"/>
-            <Button x:Name="BtnEditItems" Content="Edit Items" Padding="10,2,10,2" BorderThickness="0,0,1,1" Background="#FFEDF9FF"/>
+            <Button x:Name="BtnSearch" Content="Search for Invoice" Padding="10,2,10,3" BorderThickness="0,0,1,1" Background="#FFFEF2E0" Click="BtnSearch_Click"/>
+            <Button x:Name="BtnEditItems" Content="Edit Items" Padding="10,2,10,2" BorderThickness="0,0,1,1" Background="#FFEDF9FF" Click="BtnEditItems_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Border BorderBrush="Black" BorderThickness="2,2,1,1" Margin="20,20,20,20">

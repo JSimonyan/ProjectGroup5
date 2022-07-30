@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjectGroup5.Search;
+using ProjectGroup5.Main;
+using ProjectGroup5.Common;
 
 namespace ProjectGroup5.Items
 {
@@ -123,11 +126,7 @@ namespace ProjectGroup5.Items
         {
             try
             {
-                wndMain wm;
-                wm = new wndMain(); 
-                this.Hide();
-                wm.show();  
-
+                this.Close();
             }
             catch (Exception ex)
             {

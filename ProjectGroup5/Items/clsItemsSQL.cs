@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 using System.Text;
+using ProjectGroup5.Common;
 
 namespace ProjectGroup5.Items
 {
@@ -111,16 +112,16 @@ namespace ProjectGroup5.Items
             return sSQL;
         }
         /// <summary>
-        /// gets all enteries in the ItemDesc Table then inserts the results in a list that is then sent to the window to be displayed
+        /// gets all entries in the ItemDesc Table then inserts the results in a list that is then sent to the window to be displayed
         /// </summary>
         /// <returns></returns>
-        public List<Item> SQLGetAllitems()
+        public List<clsItem> SQLGetAllitems()
         {
             int iNumRetValues = 0;
 
 
 
-            List<Item> items = new List<Item>();
+            List<clsItem> items = new List<clsItem>();
 
             string sSQL = "Select ItemCode, ItemDesc, Cost FROM ItemDesc";
 
@@ -130,7 +131,7 @@ namespace ProjectGroup5.Items
 
             foreach (DataRow dataRow in ds.Tables[0].Rows) // loop through the data set and add items.
             {
-                items.Add(new Item(Convert.ToString(dataRow[0]), dataRow[1].ToString(), Convert.ToDouble(dataRow[2])));
+                items.Add(new clsItem(Convert.ToString(dataRow[0]), dataRow[1].ToString(), Convert.ToDouble(dataRow[2])));
             }
 
             return items;
@@ -138,68 +139,6 @@ namespace ProjectGroup5.Items
 
 
     }
-
-
-        /// <summary>
-        /// Item Class for item from invoice.
-        /// </summary>
-        public class Item
-        {
-            /// <summary>
-            /// Char for the code
-            /// </summary>
-            private string code;
-
-            /// <summary>
-            /// Description string
-            /// </summary>
-            private string description;
-
-            /// <summary>
-            /// Item cost
-            /// </summary>
-            private double cost;
-
-            /// <summary>
-            /// Item constructor for the code, description and cost.
-            /// </summary>
-            /// <param name="ItemCode"></param>
-            /// <param name="ItemDescription"></param>
-            /// <param name="ItemCost"></param>
-            public Item(string ItemCode, string ItemDescription, double ItemCost)
-            {
-                code = ItemCode;
-                description = ItemDescription;
-                cost = ItemCost;
-            }
-
-            /// <summary>
-            /// Cost property
-            /// </summary>
-            public double Cost
-            {
-                get { return cost; }
-                set { cost = value; }
-            }
-
-            /// <summary>
-            /// Description property
-            /// </summary>
-            public string Description
-            {
-                get { return description; }
-                set { description = value; }
-            }
-            /// <summary>
-            /// Code property
-            /// </summary>
-            public string Code
-            {
-                get { return code; }
-                set { code = value; }
-            }
-
-        }
     
 
 }
