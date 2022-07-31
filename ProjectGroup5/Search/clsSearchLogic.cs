@@ -12,8 +12,9 @@ namespace ProjectGroup5.Search
     class clsSearchLogic
     {
         //getSelectedInvoice return clsInvoice
-
-        //GetInvoices(InvoiceNumber, InvoiceDate, TotalCost) -return List<Invoices>
+        //GetInvoices(InvoiceNumber, InvoiceDate, TotalCost) -return DataSet
+        //selected invoice can be retrieved using the getSelectedInvoice method to return an object instance of the invoice
+        
 
         public wndSearch searchWnd;
 
