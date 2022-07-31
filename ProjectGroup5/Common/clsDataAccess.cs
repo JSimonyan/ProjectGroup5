@@ -17,7 +17,15 @@ using System.Reflection;
         /// <summary>
         /// Constructor that sets the connection string to the database
         /// </summary>
-		{
+        public clsDataAccess(string con = null)
+        {
+            if (con != null)
+            {
+                sConnectionString = con;
+                return;
+            }
+
+            sConnectionString = @"Provider=Microsoft.ACE.OLEDB.6.0;Data Source=" + Directory.GetCurrentDirectory() + "\\Invoice.accdb";
         }
 
         /// <summary>
@@ -28,7 +36,7 @@ using System.Reflection;
         /// <param name="sSQL">The SQL statement to be executed.</param>
         /// <param name="iRetVal">Reference parameter that returns the number of selected rows.</param>
         /// <returns>Returns a DataSet that contains the data from the SQL statement.</returns>
-		public DataSet ExecuteSQLStatement(string sSQL, ref int iRetVal)
+        public DataSet ExecuteSQLStatement(string sSQL, ref int iRetVal)
 		{
 			try
 			{
