@@ -17,9 +17,7 @@ using System.Reflection;
         /// <summary>
         /// Constructor that sets the connection string to the database
         /// </summary>
-		public clsDataAccess()
 		{
-            sConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\Invoice.accdb";
         }
 
         /// <summary>
