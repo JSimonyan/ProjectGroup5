@@ -17,7 +17,7 @@ namespace ProjectGroup5.Common
         /// <summary>
         /// Date the invoice was created
         /// </summary>
-        public DateTime invoiceDate;
+        public string invoiceDate;
 
         /// <summary>
         /// Total cost for the invoice
@@ -31,6 +31,20 @@ namespace ProjectGroup5.Common
         public override string ToString()
         {
             return "Invoice #" + invoiceNum;
+        }
+
+        public clsInvoice(int num, string date, int cost)
+        {
+            invoiceNum = num;
+            invoiceDate = date;
+            totalCost = cost;
+        }
+
+        public clsInvoice()
+        {
+            invoiceNum = -1;
+            invoiceDate = DateTime.Today.ToString("MM/dd/yyyy");
+            totalCost = 0;
         }
     }
 

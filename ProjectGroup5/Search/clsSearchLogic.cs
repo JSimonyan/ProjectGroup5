@@ -18,7 +18,7 @@ namespace ProjectGroup5.Search
 
         public wndSearch searchWnd;
 
-        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data source= " + Directory.GetCurrentDirectory() + "\\Invoice.mdb";
+        static string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\Invoice.mdb";
         public clsSearchSQL searchSql;
         public clsDataAccess clsDataAccess = new clsDataAccess(connectionString);
         public DataSet vDs = new DataSet();

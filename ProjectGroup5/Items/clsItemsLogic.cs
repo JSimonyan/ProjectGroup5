@@ -15,7 +15,7 @@ namespace ProjectGroup5.Items
         clsDataAccess da;
         DataSet ds;
 
-        
+
         /// <summary>
         /// constructor
         /// </summary>
@@ -27,7 +27,7 @@ namespace ProjectGroup5.Items
                 isql = new clsItemsSQL();
                 da = new clsDataAccess();
 
-                
+
             }
             catch (Exception ex)
             {
@@ -77,8 +77,8 @@ namespace ProjectGroup5.Items
         {
             try
             {
-              
-                string execSQL = isql.SQLupdateLineItems(LineItemCost,InvoiceNumber,LineNumber);
+
+                string execSQL = isql.SQLupdateLineItems(LineItemCost, InvoiceNumber, LineNumber);
                 da.ExecuteScalarSQL(execSQL);
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace ProjectGroup5.Items
         {
             try
             {
-               
+
                 string execSQL = isql.SQLupdateItems(newDescription, newCost, ItemCode);
                 da.ExecuteScalarSQL(execSQL);
 
@@ -117,11 +117,19 @@ namespace ProjectGroup5.Items
         {
             try
             {
-                
-               
-               
-                string execSQL = isql.SQLInsertItem(ItemCode,ItemDescription,ItemCost);
-                da.ExecuteScalarSQL(execSQL);
+
+                string itemExistsQuery;
+                string testSQL = isql.SQLItemExists(ItemCode);
+                itemExistsQuery = da.ExecuteScalarSQL(testSQL);
+                if(itemExistsQuery == "")
+                { 
+                    string execSQL = isql.SQLInsertItem(ItemCode, ItemDescription, ItemCost);
+                    da.ExecuteScalarSQL(execSQL);
+                }
+                else if (itemExistsQuery != "")
+                 {
+                    MessageBox.Show("An Item with that item Code Already exists please enter a different item code and try again");
+                   }
 
             }
             catch (Exception ex)

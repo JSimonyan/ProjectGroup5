@@ -44,7 +44,7 @@
         </Canvas>
 
         <!-- visibile after Add Item button is pushed -->
-        <Canvas x:Name="AddItemCanvas" HorizontalAlignment="Left" Height="146" Margin="24,201,0,0" VerticalAlignment="Top" Width="425" Visibility="Visible">
+        <Canvas x:Name="AddItemCanvas" HorizontalAlignment="Left" Height="146" Margin="24,201,0,0" VerticalAlignment="Top" Width="425" Visibility="Hidden">
             <Label Content="Item Description :" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="105" />
             <Label Content="Cost :" Height="32" Width="77" Canvas.Top="73"/>
             <Label Content="Item Code : " Height="32" Width="97" Canvas.Left="122" Canvas.Top="74"/>
@@ -53,7 +53,7 @@
             <TextBox x:Name="AddItemCodeTxtbx" Height="35"  TextWrapping="Wrap" Width="78" Canvas.Left="122" Canvas.Top="106"/>
         </Canvas>
         <!-- hidden until    update button pushed -->
-        <Canvas x:Name="UpdateDescCanvas" HorizontalAlignment="Left" Height="150" Margin="24,197,0,0" VerticalAlignment="Top" Width="364" Visibility="Hidden">
+        <Canvas x:Name="UpdateDescCanvas" HorizontalAlignment="Left" Height="150" Margin="24,197,0,0" VerticalAlignment="Top" Width="364" Visibility="Visible">
             <Label Content="Item Description:" Height="32" Width="105" Margin="10,0,0,0" Canvas.Left="-11"/>
             <Label Content="Cost:" Height="32" Width="77" Canvas.Top="73"/>
             <TextBox x:Name="ItemDescriptionTxtbx" Height="35"  TextWrapping="Wrap" Width="238" Canvas.Top="33"/>

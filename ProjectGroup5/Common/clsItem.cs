@@ -54,6 +54,7 @@ namespace ProjectGroup5.Common
             get { return description; }
             set { description = value; }
         }
+
         /// <summary>
         /// Code property
         /// </summary>
@@ -62,6 +63,17 @@ namespace ProjectGroup5.Common
             get { return code; }
             set { code = value; }
         }
+
+        /// <summary>
+        /// Override for combo box display
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return description;
+        }
     }
+
+
 
 }
