@@ -21,8 +21,14 @@ namespace ProjectGroup5.Main
     /// </summary>
     public partial class wndMain : Window
     {
+        /// <summary>
+        /// Main logic class
+        /// </summary>
         clsMainLogic mLogic;
         
+        /// <summary>
+        /// Current group selection for the item display
+        /// </summary>
         int selection;
 
         /// <summary>
@@ -83,6 +89,9 @@ namespace ProjectGroup5.Main
             }
         }
 
+        /// <summary>
+        /// Updates all items in the add items box
+        /// </summary>
         private void UpdateItems()
         {
             try

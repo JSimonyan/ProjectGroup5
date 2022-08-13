@@ -33,6 +33,9 @@ namespace ProjectGroup5.Common
             return "Invoice #" + invoiceNum;
         }
 
+        /// <summary>
+        /// Constructor for a new invoice
+        /// </summary>
         public clsInvoice(int num, string date, int cost)
         {
             invoiceNum = num;
@@ -40,6 +43,9 @@ namespace ProjectGroup5.Common
             totalCost = cost;
         }
 
+        /// <summary>
+        /// Constructor for a new invoice
+        /// </summary>
         public clsInvoice()
         {
             invoiceNum = -1;

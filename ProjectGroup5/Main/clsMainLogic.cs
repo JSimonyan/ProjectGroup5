@@ -121,6 +121,9 @@ namespace ProjectGroup5.Main
             }
         }
 
+        /// <summary>
+        /// Deletes and invoice and line itemes from the DB
+        /// </summary>
         public void DeleteInvoice()
         {
             try
@@ -138,6 +141,9 @@ namespace ProjectGroup5.Main
             }
         }
 
+        /// <summary>
+        /// updates the items for the selected invoice
+        /// </summary>
         public void UpdateItemsList()
         {
             try
