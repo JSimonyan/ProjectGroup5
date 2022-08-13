@@ -34,13 +34,13 @@ namespace ProjectGroup5.Items
         /// <summary>
         /// Selects items based on the a name entered by user
         /// </summary>
-        /// <param name="itemName"> string containing a name for an item</param>
+        /// <param name="itemCode"> string containing a name for an item</param>
         /// <returns></returns>
-        public string SQLSelectItems(string itemName)
+        public string SQLSelectItems(string itemCode)
         {
             try
             {
-                string sSQL = "SELECT InvoiceNum FROM LineItems Where ItemCode = '" + itemName + "';";
+                string sSQL = "SELECT InvoiceNum FROM LineItems Where ItemCode = '" + itemCode + "';";
                 return sSQL;
             }
             catch (Exception ex)
@@ -49,12 +49,27 @@ namespace ProjectGroup5.Items
             }
 
         }
-        /// <summary>
-        /// uses a string input by user in text boxes to update a entry in the item Table 
-        /// </summary>
-        /// <param name="itemUpdateSQL"> update entry input by string </param>
-        /// <returns></returns>
-        public string SQLupdateItems(string newDescription, string newCost, string itemCode)
+
+        public string SQLItemExists(string itemCode)
+        { 
+             try
+            {
+                string sSQL = "SELECT * FROM ItemDesc Where ItemCode = '" + itemCode + "';";
+                return sSQL;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+            }
+
+        }
+
+/// <summary>
+/// uses a string input by user in text boxes to update a entry in the item Table 
+/// </summary>
+/// <param name="itemUpdateSQL"> update entry input by string </param>
+/// <returns></returns>
+public string SQLupdateItems(string newDescription, string newCost, string itemCode)
         {
             try
             {
@@ -92,7 +107,7 @@ namespace ProjectGroup5.Items
         {
             try
             {
-                string sSQL = "DELETE FROM ItemDesc WHERE ItemCode =  " + itemDeleteSQL;
+                string sSQL = "DELETE FROM ItemDesc WHERE ItemCode =  '" + itemDeleteSQL + "';";
                 return sSQL;
             }
             catch (Exception ex)
@@ -108,7 +123,7 @@ namespace ProjectGroup5.Items
         /// <returns></returns>
         public string SQLInsertItem(string ItemCode, string ItemDescription, string ItemCost)
         {
-            string sSQL = " Insert into ItemDesc(ItemCode, ItemDesc, Cost) Values(" + "'" + ItemCode + "', '" + ItemDescription + "', " + ItemCost + ");"; 
+            string sSQL = " Insert into ItemDesc(ItemCode, ItemDesc, Cost) Values(" + "'" + ItemCode + "', '" + ItemDescription + "', " + ItemCost + ");";
             return sSQL;
         }
         /// <summary>
@@ -139,6 +154,6 @@ namespace ProjectGroup5.Items
 
 
     }
-    
+
 
 }

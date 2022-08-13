@@ -25,8 +25,8 @@ using System.Reflection;
                 return;
             }
 
-            sConnectionString = @"Provider=Microsoft.ACE.OLEDB.6.0;Data Source=" + Directory.GetCurrentDirectory() + "\\Invoice.accdb";
-        }
+        sConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\Invoice.mdb";
+    }
 
         /// <summary>
         /// This method takes an SQL statment that is passed in and executes it.  The resulting values
